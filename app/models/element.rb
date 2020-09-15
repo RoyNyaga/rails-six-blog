@@ -3,4 +3,3 @@ class Element < ApplicationRecord
 
   validates :element_type, inclusion: { in: ['paragraph', 'image', 'video-embed'] }
 end
-df
