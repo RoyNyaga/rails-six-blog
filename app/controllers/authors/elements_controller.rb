@@ -8,10 +8,11 @@ module Authors
       @element = @post.elements.build
 
       if @element.save
-        redirect_to @post
+        notice = nil
       else
-        redirect_to @post, notice: @element.errors.full_messages.join(". ") << ". "
+        notice = @element.errors.full_messages.join(". ") << ". "
       end
+      redirect_to edit_post_path(@post), notice: notice
     end
 
     # PATCH/PUT /elements/1
