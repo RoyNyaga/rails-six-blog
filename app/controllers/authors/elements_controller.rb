@@ -10,7 +10,7 @@ module Authors
       if @element.save
         redirect_to @post
       else
-        redirect_to @post, notice: @post.errors.full_messages.join(". ")
+        redirect_to @post, notice: @element.errors.full_messages.join(". ") << ". "
       end
     end
 
@@ -41,7 +41,7 @@ module Authors
 
       # Only allow a trusted parameter "white list" through.
       def element_params
-        params.require(:element).permit(:element_type, :content, :post_id, :position)
+        params.require(:element).permit(:element_type, :content)
       end
   end
 end
