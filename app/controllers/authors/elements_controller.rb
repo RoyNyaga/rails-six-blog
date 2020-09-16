@@ -19,7 +19,6 @@ module Authors
     def update
       @element.update(element_params)
       redirect_to edit_post_path(@element.post), notice: 'Element was successfully updated.'
-
     end
 
     # DELETE /elements/1
